@@ -1,0 +1,216 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  background: var(--bg);
+}
+
+.auth-brand {
+  width: 420px;
+  background: var(--bg-sidebar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) { .auth-brand { display: none; } }
+
+.auth-brand-inner { max-width: 300px; }
+
+.auth-logo {
+  width: 52px; height: 52px;
+  background: var(--accent);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.auth-brand h1 {
+  font-size: 26px; font-weight: 800;
+  color: #fff; margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.auth-brand p {
+  font-size: 14px; color: rgba(255,255,255,0.5);
+  margin-bottom: 40px; line-height: 1.6;
+}
+
+.auth-stats {
+  display: flex; gap: 20px; flex-wrap: wrap;
+}
+.auth-stat {
+  display: flex; flex-direction: column;
+}
+.auth-stat span {
+  font-size: 15px; font-weight: 700; color: #fff;
+}
+.auth-stat small {
+  font-size: 11px; color: rgba(255,255,255,0.4);
+}
+
+.auth-form-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  overflow-y: auto;
+}
+
+.auth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 250ms ease;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.auth-icon-badge {
+  width: 44px; height: 44px;
+  background: var(--accent-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  margin: 0 auto 14px;
+}
+.auth-header h2 {
+  font-size: 22px; font-weight: 700;
+  color: var(--text-primary); margin-bottom: 6px;
+}
+.auth-header p { font-size: 13px; color: var(--text-muted); }
+
+.auth-form { display: flex; flex-direction: column; gap: 16px; }
+
+.input-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-icon-wrap svg:first-child {
+  position: absolute; left: 12px;
+  color: var(--text-muted); pointer-events: none;
+}
+.input-icon-wrap input { padding-left: 36px; }
+.pass-toggle {
+  position: absolute; right: 12px;
+  background: transparent; color: var(--text-muted);
+  padding: 2px; transition: color var(--transition);
+}
+.pass-toggle:hover { color: var(--text-primary); }
+
+.w-full { width: 100%; }
+
+.auth-link-text {
+  text-align: center; font-size: 13px; color: var(--text-muted);
+}
+.auth-link-text a {
+  color: var(--accent); text-decoration: none; font-weight: 500;
+}
+.auth-link-text a:hover { text-decoration: underline; }
+
+/* OTP inputs */
+.otp-hint {
+  font-size: 13px; color: var(--text-muted);
+  text-align: center;
+}
+.otp-inputs {
+  display: flex; gap: 10px; justify-content: center;
+}
+.otp-cell {
+  width: 48px !important; height: 56px;
+  text-align: center;
+  font-size: 22px; font-weight: 700;
+  font-family: var(--font-mono);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0 !important;
+  transition: all var(--transition);
+}
+.otp-cell:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,112,242,0.12);
+}
+
+.otp-resend {
+  text-align: center; font-size: 12px;
+}
+.resend-btn {
+  background: transparent;
+  color: var(--accent);
+  font-size: 12px; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 8px; border-radius: var(--radius);
+  transition: background var(--transition);
+}
+.resend-btn:hover { background: var(--accent-light); }
+
+/* Method selection */
+.method-identifier {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg); border: 1px solid var(--border-light);
+  border-radius: var(--radius); padding: 8px 12px;
+  font-size: 13px; color: var(--text-primary); font-weight: 500;
+}
+.method-identifier svg { color: var(--text-muted); }
+.method-identifier span:last-of-type { flex: 1; }
+.change-btn {
+  background: transparent; color: var(--accent);
+  font-size: 12px; font-weight: 500; padding: 2px 6px;
+  border-radius: var(--radius); transition: background var(--transition);
+}
+.change-btn:hover { background: var(--accent-light); }
+
+.method-label {
+  font-size: 13px; color: var(--text-secondary); font-weight: 500;
+}
+.method-cards { display: flex; flex-direction: column; gap: 8px; }
+.method-card {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px; border-radius: var(--radius-lg);
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  text-align: left; cursor: pointer;
+  transition: all var(--transition);
+}
+.method-card:hover { border-color: var(--accent); background: var(--accent-light); }
+.method-card.active { border-color: var(--accent); background: var(--accent-light); }
+.method-card-icon { font-size: 22px; }
+.method-card strong { display: block; font-size: 13px; color: var(--text-primary); font-weight: 600; }
+.method-card small { font-size: 11px; color: var(--text-muted); }
+
+/* Role badges on register */
+.role-select-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.role-option {
+  padding: 10px 12px; border-radius: var(--radius);
+  border: 2px solid var(--border); cursor: pointer;
+  text-align: center; transition: all var(--transition);
+}
+.role-option:hover { border-color: var(--accent); }
+.role-option.active { border-color: var(--accent); background: var(--accent-light); }
+.role-option strong { display: block; font-size: 12px; color: var(--text-primary); font-weight: 600; }
+.role-option small { font-size: 10px; color: var(--text-muted); }
+
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Progress steps */
+.auth-steps {
+  display: flex; align-items: center; gap: 4px;
+  justify-content: center; margin-bottom: 28px;
+}
+.auth-step {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border); transition: all var(--transition);
+}
+.auth-step.active { background: var(--accent); width: 24px; border-radius: 4px; }
+.auth-step.done { background: var(--success); }
