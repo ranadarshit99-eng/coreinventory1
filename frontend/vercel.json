@@ -1,0 +1,39 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://coreinventory1.onrender.com/api/:path*"
+    }
+  ]
+}
+```
+
+6. Scroll down → click **"Commit new file"**
+
+---
+
+## Then Deploy on Vercel
+
+1. Go to **vercel.com** → Sign in with GitHub
+2. Click **"Add New Project"**
+3. Find `coreinventory1` → click **"Import"**
+4. You will see a configuration screen — set these:
+
+| Field | Value |
+|---|---|
+| **Root Directory** | `frontend` |
+| **Framework Preset** | `Vite` |
+| **Build Command** | `npm run build` |
+| **Output Directory** | `dist` |
+
+5. Click **"Deploy"**
+6. Wait 2 minutes → you get a live URL like `https://coreinventory1.vercel.app`
+
+---
+
+## Then Test Login
+
+Open your Vercel URL and login with:
+```
+Email:    admin@coreinventory.com
+Password: Admin@123
